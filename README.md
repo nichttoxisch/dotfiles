@@ -1,3 +1,8 @@
+## Dependencies for dwm (arch)
+```bash
+sudo pacman -Syu base-devel git libx11 libxft libxinerma xorg-server xorg-xinit ttf-jetbrains-mono-nerd alacritty
+```
+
 ## Installation
 ```bash
 cd ~
