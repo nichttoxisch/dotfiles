@@ -1,4 +1,7 @@
 xrdb -merge ~/.Xresources
 setxkbmap de -variant mac
 slstatus &
-exec dwm
+
+while true; do
+	dwm 2> /tmp/dwm.log
+done
