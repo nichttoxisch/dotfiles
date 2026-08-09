@@ -1,5 +1,6 @@
 ## Installation
 ```bash
-ln -s .xinitrc ~/.xinitrc
-ln -s .Xresources ~/.Xresources
+cd ~
+ln -s dotfiles/.xinitrc .xinitrc
+ln -s dotfiles/.Xresources .Xresources
 ```
