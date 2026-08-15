@@ -1,6 +1,6 @@
 ## Dependencies for dwm (arch)
 ```bash
-sudo pacman -Syu base-devel git libx11 libxft libxineriama xorg-server xorg-xinit ttf-jetbrains-mono-nerd kitty dmenu nvim maim
+sudo pacman -Syu base-devel git libx11 libxft libxineriama xorg-server xorg-xinit ttf-jetbrains-mono-nerd kitty dmenu nvim maim eza
 ```
 
 ## Installation
