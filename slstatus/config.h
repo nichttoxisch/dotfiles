@@ -62,16 +62,25 @@ static const char unknown_str[] = "n/a";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
 
+#define BATTERY 0
+#define CPU_TEMP_HWMON 1
+
 static const struct arg args[] = {
     /* function format          argument */
-	 { ipv4,          " %s ",        "wlp2s0"                                },
+	 { ipv4,          " %s ",        "enp37s0"                               },
 	 { cpu_perc,      "| cpu %s%% ", NULL                                    },
+#if CPU_TEMP_HWMON
+	 { temp,          "(%s°)  ",     "/sys/class/hwmon/hwmon0/temp1_input" },
+#else
 	 { temp,          "(%s°)  ",     "/sys/class/thermal/thermal_zone1/temp" },
-	 { ram_used,      "| mem %s / ",   NULL                                    },
+#endif
+	 { ram_used,      "| mem %s / ",   NULL                                  },
 	 { ram_total,     "%s ",         NULL                                    },
+#if BATTERY
 	 { battery_state, "| bat %s ",   "BAT0"                                  },
 	 { battery_perc,  "%s%% ",       "BAT0"                                  },
-	 { temp,          "(%s°) ",     "/sys/class/thermal/thermal_zone0/temp" },
+	 { temp,          "(%s°) ",     "/sys/class/thermal/thermal_zone0/temp"  },
+#endif
 	 { datetime,      "| %s ",       "%a %F %T"                              },
 };
 
