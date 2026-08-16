@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 4; /* border pixel of windows */
+static const unsigned int borderpx = 0; /* border pixel of windows */
 static const unsigned int snap = 0;     /* snap pixel */
 static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
@@ -66,7 +66,7 @@ static char dmenumon[2] =
 static const char *dmenucmd[] = {
     "dmenu_run", "-m",   dmenumon, "-fn",  dmenufont, "-nb",  col_bg,
     "-nf",       col_fg, "-sb",    col_fg, "-sf",     col_bg, NULL};
-static const char *termcmd[] = {"kitty", NULL};
+static const char *termcmd[] = {"alacritty", NULL};
 static const char *shotcmd[] = {
     "sh", "-c",
     "maim -s | tee ~/Pictures/screenshot-$(date +%Y-%m-%d-%T).png | xclip "
