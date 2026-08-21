@@ -66,7 +66,7 @@ static char dmenumon[2] =
 static const char *dmenucmd[] = {
     "dmenu_run", "-m",   dmenumon, "-fn",  dmenufont, "-nb",  col_bg,
     "-nf",       col_fg, "-sb",    col_fg, "-sf",     col_bg, NULL};
-static const char *termcmd[] = {"alacritty", NULL};
+static const char *termcmd[] = {"kitty", NULL};
 static const char *shotcmd[] = {
     "sh", "-c",
     "maim -s | tee ~/Pictures/screenshot-$(date +%Y-%m-%d-%T).png | xclip "

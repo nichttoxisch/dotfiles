@@ -1,0 +1,2 @@
+#!/bin/sh
+sed $'s/\033\\[[0-9;]*m//g' | bat --language=man --plain

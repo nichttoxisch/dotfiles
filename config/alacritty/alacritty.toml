@@ -2,6 +2,9 @@
 opacity = 0.9
 padding = { x = 10, y = 10 }
 
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+
 [general]
 import = [
     "~/.config/alacritty/themes/themes/gruvbox_dark.toml"

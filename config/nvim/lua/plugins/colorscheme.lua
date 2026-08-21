@@ -5,7 +5,12 @@ return {
       colorscheme = "gruvbox",
     },
   },
-
+  {
+    "folke/snacks.nvim",
+    opts = {
+      dashboard = { enabled = false },
+    },
+  },
   {
     "ellisonleao/gruvbox.nvim",
     opts = {
