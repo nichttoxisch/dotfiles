@@ -66,19 +66,23 @@ static char dmenumon[2] =
 static const char *dmenucmd[] = {
     "dmenu_run", "-m",   dmenumon, "-fn",  dmenufont, "-nb",  col_bg,
     "-nf",       col_fg, "-sb",    col_fg, "-sf",     col_bg, NULL};
-static const char *termcmd[] = {"kitty", NULL};
+static const char *termcmd[] = {"alacritty", NULL};
 static const char *shotcmd[] = {
     "sh", "-c",
-    "maim -s | tee ~/Pictures/screenshot-$(date +%Y-%m-%d-%T).png | xclip "
+    "maim -s | tee ~/pictures/screenshot-$(date +%Y-%m-%d-%T).png | xclip "
     "-selection clipboard -t image/png",
     NULL};
+static const char *explorercmd[] = {"thunar", NULL};
+static const char *browsercmd[] = {"google-chrome-stable", NULL};
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
     {MODKEY, XK_space, spawn, {.v = dmenucmd}},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
+    {MODKEY, XK_e, spawn, {.v = explorercmd}},
     {MODKEY, XK_u, spawn, {.v = shotcmd}},
-    {MODKEY, XK_b, togglebar, {0}},
+    {MODKEY, XK_b, spawn, {.v = browsercmd}},
+    {MODKEY, XK_f, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
     {MODKEY, XK_k, focusstack, {.i = -1}},
     {MODKEY, XK_i, incnmaster, {.i = +1}},
@@ -88,9 +92,6 @@ static const Key keys[] = {
     {MODKEY, XK_z, zoom, {0}},
     {MODKEY, XK_Tab, view, {0}},
     {MODKEY, XK_q, killclient, {0}},
-    {MODKEY, XK_t, setlayout, {.v = &layouts[0]}},
-    {MODKEY, XK_f, setlayout, {.v = &layouts[1]}},
-    {MODKEY, XK_m, setlayout, {.v = &layouts[2]}},
     {MODKEY, XK_p, setlayout, {0}},
     {MODKEY | ShiftMask, XK_space, togglefloating, {0}},
     {MODKEY, XK_0, view, {.ui = ~0}},

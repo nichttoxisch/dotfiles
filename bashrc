@@ -16,7 +16,11 @@ alias ll='ls -l'
 alias la='ls -la'
 alias grep='rg --color=auto'
 alias date='date "+%a %Y-%m-%d %H:%M:%S"'
+alias ltspice="wine $HOME/.wine/drive_c/Program\ Files/ADI/LTspice/LTspice.exe"
 
+# export CHROME_USER_FLAGS="--disable-gpu-vsync --disable-frame-rate-limit"
 export MANPAGER="$HOME/dotfiles/manpager"
 export EDITOR=nvim
-export PATH="$PATH:/home/nichttoxisch/.spicetify"
+export PATH="$PATH:$HOME/opt/bin"
+
+. "$HOME/.local/bin/env"
